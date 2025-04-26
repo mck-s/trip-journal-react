@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  background: #fcfcfb;
+  color: #444;
+  overflow-x: hidden;
+}
+
+/* Page Layout */
+.diary-layout {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: #fefefe;
+  border-right: 1px solid #eee;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.03);
+  z-index: 100;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.side-menu li {
+  margin-bottom: 1rem;
+}
+
+.side-menu a {
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+}
+
+.side-menu a:hover {
+  color: #000;
+}
+
+/* Content wrapper */
+.diary-wrapper {
+  margin-left: 240px;
+  padding: 3rem 2rem;
+  max-width: 900px;
+  flex: 1;
+  position: relative;
+}
+
+/* Hero Banner */
+.banner {
+  width: 100vw;
+  height: 300px;
+  position: relative;
+  background: 
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(252, 252, 251, 1) 85%),
+    url("https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80")
+    center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 1.5s ease-in;
+  margin-left: -240px;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entry List */
+.entries {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Entry Card */
+.entry {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background-color: transparent;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.entry-content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Smaller image on the left */
+.entry-img {
+  width: 360px; /* Increased from 180px to 360px */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+
+.entry-img.fade-in {
+  opacity: 1;
+}
+
+/* Text on the right */
+.entry-text {
+  flex: 1;
+  text-align: left;
+}
+
+.entry-text h2 {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.entry-text p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
