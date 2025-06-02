@@ -65,12 +65,12 @@ body {
 
 /* Content Wrapper */
 .diary-wrapper {
-  margin-left: 240px;
   padding: 3rem 2rem;
   max-width: 900px;
   flex: 1;
-  position: relative;
+  margin: 0 auto;
 }
+
 
 @media (max-width: 768px) {
   .diary-wrapper {
@@ -81,7 +81,6 @@ body {
 
 /* Hero Banner */
 .banner {
-  width: 100%;
   height: 300px;
   background: 
     linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(252, 252, 251, 1) 85%),
@@ -90,8 +89,10 @@ body {
   justify-content: center;
   align-items: center;
   animation: fadeIn 1.5s ease-in;
-  margin-left: -240px;
+  margin: 0 auto;
+  width: 100%;
 }
+
 
 @media (max-width: 768px) {
   .banner {
