@@ -66,9 +66,8 @@ body {
   height: 300px;
   position: relative;
   background: 
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(252, 252, 251, 1) 85%),
-    url("https://images.unsplash.com/photo-1491553895911-0055eca6402d?auto=format&fit=crop&w=1200&q=80")
-    center/cover no-repeat;
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(252, 252, 251, 1) 85%),
+  url("./bgg.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +76,7 @@ body {
   border-bottom: none;
   box-shadow: none;
 }
+
 
 @keyframes fadeIn {
   from {
@@ -116,11 +116,10 @@ body {
 
 /* Smaller image on the left */
 .entry-img {
-  width: 360px; /* Increased from 180px to 360px */
-  height: auto;
+  width: 360px;
+  height: 360px;
   object-fit: cover;
   border-radius: 8px;
-  opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
@@ -146,4 +145,14 @@ body {
   color: #555;
   line-height: 1.7;
   margin: 0;
+}
+.cherry-blossom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  height: 80vh;
+  pointer-events: none;
+  z-index: 1000;
+  transform: translateX(100px);
+  animation: blossom-in 1.5s ease-out forwards;
 }
