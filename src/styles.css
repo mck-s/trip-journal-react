@@ -51,6 +51,13 @@ body {
   color: #000;
 }
 
+/* Hide the side menu on small screens */
+@media (max-width: 768px) {
+  .side-menu {
+    display: none;
+  }
+}
+
 /* Content wrapper */
 .diary-wrapper {
   margin-left: 240px;
