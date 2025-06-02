@@ -14,6 +14,12 @@ body {
   flex-direction: row;
 }
 
+@media (max-width: 768px) {
+  .diary-layout {
+    flex-direction: column;
+  }
+}
+
 /* Side Menu */
 .side-menu {
   position: fixed;
@@ -51,14 +57,13 @@ body {
   color: #000;
 }
 
-/* Hide the side menu on small screens */
 @media (max-width: 768px) {
   .side-menu {
     display: none;
   }
 }
 
-/* Content wrapper */
+/* Content Wrapper */
 .diary-wrapper {
   margin-left: 240px;
   padding: 3rem 2rem;
@@ -67,23 +72,33 @@ body {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .diary-wrapper {
+    margin-left: 0;
+    padding: 2rem 1rem;
+  }
+}
+
 /* Hero Banner */
 .banner {
-  width: 100vw;
+  width: 100%;
   height: 300px;
-  position: relative;
   background: 
-  linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(252, 252, 251, 1) 85%),
-  url("./bgg.jpg") center/cover no-repeat;
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(252, 252, 251, 1) 85%),
+    url("./bgg.jpg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fadeIn 1.5s ease-in;
   margin-left: -240px;
-  border-bottom: none;
-  box-shadow: none;
 }
 
+@media (max-width: 768px) {
+  .banner {
+    margin-left: 0;
+    background-position: center;
+  }
+}
 
 @keyframes fadeIn {
   from {
@@ -110,32 +125,39 @@ body {
   padding: 2rem;
   background-color: transparent;
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
 }
 
 .entry-content {
   display: flex;
+  flex-direction: row;
   align-items: center;
   gap: 2rem;
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* Smaller image on the left */
+@media (max-width: 768px) {
+  .entry-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Entry Image */
 .entry-img {
   width: 360px;
   height: 360px;
   object-fit: cover;
   border-radius: 8px;
+  max-width: 100%;
   transition: opacity 1s ease-in-out;
 }
-
 
 .entry-img.fade-in {
   opacity: 1;
 }
 
-/* Text on the right */
+/* Entry Text */
 .entry-text {
   flex: 1;
   text-align: left;
@@ -153,6 +175,14 @@ body {
   line-height: 1.7;
   margin: 0;
 }
+
+@media (max-width: 768px) {
+  .entry-text {
+    text-align: center;
+  }
+}
+
+/* Cherry Blossom */
 .cherry-blossom {
   position: fixed;
   bottom: 0;
@@ -162,4 +192,15 @@ body {
   z-index: 1000;
   transform: translateX(100px);
   animation: blossom-in 1.5s ease-out forwards;
+}
+
+@keyframes blossom-in {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(100px);
+  }
 }
