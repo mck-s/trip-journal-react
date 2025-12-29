@@ -57,14 +57,6 @@ const places: Place[] = [
       "https://www.google.co.jp/maps/place/%E5%8C%BA%E6%B8%8B%E8%B0%B7%E4%BA%A4%E5%B7%AE%E7%82%B9/@35.659482,139.6979847,17z/data=!3m2!4b1!5s0x60188b57f546295f:0x486cece41a7b21b0!4m6!3m5!1s0x60188bcaeb0cd12b:0x20e563a2e0aec969!8m2!3d35.659482!4d139.7005596!16s%2Fg%2F11shy4scrj?hl=ja&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
   },
   {
-    id: "meiji-jingu",
-    title: "Meiji Jingu Shrine",
-    subtitle: "Peaceful shrine near Harajuku",
-    img: "/images/harajuku.png",
-    mapUrl:
-      "https://www.google.com/maps/place/Meiji+Jingu/@35.6763981,139.6993251,17z",
-  },
-  {
     id: "sunshine-city",
     title: "Sunshine City",
     subtitle: "Ikebukuro",
