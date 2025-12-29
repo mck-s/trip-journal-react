@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 type Place = {
   id: string;
@@ -13,26 +12,26 @@ const places: Place[] = [
   {
     id: "tokyo-disneyland",
     title: "Tokyo Disneyland",
-    img: "/images/disney.png",
+    img: "https://images.unsplash.com/photo-1567203366142-93d450d7ffe8?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Tokyo+Disneyland/",
   },
   {
     id: "tokyo-disneysea",
     title: "Tokyo DisneySea",
-    img: "/images/416.gif",
+    img: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Tokyo+DisneySea/",
   },
   {
     id: "omori-apa-hotel",
     title: "Omori APA Hotel",
-    img: "/images/apa.png",
+    img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/APA+Hotel+Omori+Ekimae/",
   },
   {
     id: "omori-mall-ito",
     title: "Omori Mall",
     subtitle: "Ito-Yokado",
-    img: "/images/ito.png",
+    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?w=200&h=200&fit=crop",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=%E3%82%A4%E3%83%88%E3%83%BC%E3%83%A8%E3%83%BC%E3%82%AB%E3%83%89%E3%83%BC+%E5%A4%A7%E6%A3%AE%E5%BA%97",
   },
@@ -40,21 +39,20 @@ const places: Place[] = [
     id: "kameido-station",
     title: "Kameido Station",
     subtitle: "Minoru's station",
-    img: "/images/kameido.png",
+    img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Kameido+Station/",
   },
   {
     id: "shibuya-crossing",
     title: "Shibuya Crossing",
-    img: "/images/shibuya.png",
+    img: "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Shibuya+Crossing/",
   },
-
   {
     id: "harajuku",
     title: "Harajuku Area",
     subtitle: "Takeshita Street",
-    img: "/images/harajuku.png",
+    img: "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=200&h=200&fit=crop",
     mapUrl:
       "https://www.google.com/maps/search/?api=1&query=%E5%8E%9F%E5%AE%BF",
   },
@@ -62,44 +60,47 @@ const places: Place[] = [
     id: "sunshine-city",
     title: "Sunshine City",
     subtitle: "Ikebukuro",
-    img: "/images/sunshine.png",
+    img: "https://images.unsplash.com/photo-1480796927426-f609979314bd?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Sunshine+City/",
   },
   {
     id: "tsukiji",
     title: "Tsukiji Outer Market",
-    img: "/images/410.gif",
+    img: "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Tsukiji+Outer+Market/",
   },
   {
     id: "ueno",
     title: "Ueno Park",
-    img: "/images/411.gif",
+    img: "https://images.unsplash.com/photo-1522383225653-ed111181a951?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Ueno+Park/",
   },
   {
     id: "skytree",
     title: "Tokyo Skytree",
     subtitle: "Kirby Cafe + Shopping",
-    img: "/images/418.gif",
+    img: "https://images.unsplash.com/photo-1536098561742-ca998e48cbcc?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Tokyo+Skytree/",
   },
   {
     id: "akihabara",
     title: "Akihabara Station",
-    img: "/images/421.gif",
+    img: "https://images.unsplash.com/photo-1590559899731-a382839e5549?w=200&h=200&fit=crop",
     mapUrl: "https://www.google.com/maps/place/Akihabara+Station/",
   },
 ];
 
 export default function Maps() {
+  const handleMapClick = (mapUrl: string) => {
+    // Open in new tab for seamless experience
+    window.open(mapUrl, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <div style={styles.page}>
       <header style={styles.header}>
         <div style={styles.headerRow}>
-          <Link to="/" style={styles.back}>
-            ← Diary
-          </Link>
+          <div style={styles.back}>← Diary</div>
           <div style={styles.headerTitle}>Trip Places</div>
           <div style={styles.headerSpacer} />
         </div>
@@ -111,12 +112,13 @@ export default function Maps() {
           <div
             key={place.id}
             style={styles.card}
-            role="link"
+            role="button"
             tabIndex={0}
-            onClick={() => window.location.assign(place.mapUrl)}
+            onClick={() => handleMapClick(place.mapUrl)}
             onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                window.location.assign(place.mapUrl);
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleMapClick(place.mapUrl);
               }
             }}
           >
@@ -154,6 +156,7 @@ const styles: Record<string, React.CSSProperties> = {
     padding: "16px",
     maxWidth: 520,
     margin: "0 auto",
+    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
   },
   header: { paddingTop: 8, paddingBottom: 12 },
   headerRow: {
@@ -170,6 +173,7 @@ const styles: Record<string, React.CSSProperties> = {
     background: "rgba(0,0,0,0.06)",
     fontSize: 13,
     fontWeight: 600,
+    cursor: "pointer",
   },
   headerTitle: { fontSize: 18, fontWeight: 800 },
   headerSpacer: { width: 60 },
@@ -182,6 +186,7 @@ const styles: Record<string, React.CSSProperties> = {
     borderRadius: 16,
     background: "rgba(0,0,0,0.04)",
     cursor: "pointer",
+    transition: "background 0.2s ease",
   },
   img: {
     width: 92,
