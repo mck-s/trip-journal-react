@@ -49,6 +49,14 @@ const places: Place[] = [
       "https://www.google.com/maps/place/Kameido+Station/@35.6973268,139.8239909,17z/data=!3m1!4b1!4m6!3m5!1s0x601888c4f237ec91:0x33949174fb66cb0e!8m2!3d35.6973225!4d139.8265658!16s%2Fm%2F03nqjkw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
   },
   {
+    id: "asakusa-station",
+    title: "Asakusa Station",
+    subtitle: "Traditional Town",
+    img: "/images/asa.png",
+    mapUrl:
+      "https://www.google.co.jp/maps/place/浅草橋駅/@35.6974952,139.7834085,17z/data=!3m1!4b1!4m6!3m5!1s0x60188eb3ca1fe0af:0xe8619fd30fb31658!8m2!3d35.6974952!4d139.7859834!16s%2Fm%2F03gv1v3?hl=ja&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+  },
+  {
     id: "shibuya-station",
     title: "Shibuya Station",
     subtitle: "Big crossing area",
