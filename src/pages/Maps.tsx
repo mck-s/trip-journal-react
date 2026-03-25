@@ -94,7 +94,7 @@ const places: Place[] = [
     subtitle: "Temples + teahouse",
     exitHint: "Ueno Station Park Exit",
     img: "/images/411.gif",
-    query: "Ueno Park",
+    query: "Ueno Station",
   },
   {
     id: "skytree",
@@ -119,7 +119,7 @@ const places: Place[] = [
     subtitle: "Harbor city",
     exitHint: "East Exit",
     img: "/images/yokohama.jpg",
-    query: "Yokohama Station",
+    query: "Yokohama Station, Nishi Ward, Yokohama, Kanagawa, Japan",
   },
 ];
 
