@@ -4,6 +4,7 @@ type Place = {
   id: string;
   title: string;
   subtitle?: string;
+  exitHint?: string;
   img: string;
   mapUrl?: string;
   query?: string;
@@ -14,6 +15,7 @@ const places: Place[] = [
     id: "tokyo-disneyland",
     title: "Tokyo Disneyland",
     subtitle: "",
+    exitHint: "Maihama Station South Exit",
     img: "/images/disney.png",
     mapUrl:
       "https://www.google.com/maps/place/Tokyo+Disneyland/@35.6329007,139.8778194,17z/data=!3m1!4b1!4m6!3m5!1s0x60187d03114737b3:0xe4d93636d509d3cb!8m2!3d35.6328964!4d139.8803943!16zL20vMDQ0ejFu?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
@@ -22,6 +24,7 @@ const places: Place[] = [
     id: "tokyo-disneysea",
     title: "Tokyo DisneySea",
     subtitle: "",
+    exitHint: "Maihama Station South Exit",
     img: "/images/416.gif",
     query: "Tokyo DisneySea",
   },
@@ -29,6 +32,7 @@ const places: Place[] = [
     id: "omori-apa-hotel",
     title: "Omori APA Hotel",
     subtitle: "",
+    exitHint: "North Exit",
     img: "/images/apa.png",
     mapUrl:
       "https://www.google.com/maps/place/APA+Hotel+Omori+EkIMAE/@35.5894103,139.7296136,17z/data=!3m1!4b1!4m9!3m8!1s0x601861d0cff8930f:0xad7e339e8096150d!5m2!4m1!1i2!8m2!3d35.5894103!4d139.7296136!16s%2Fg%2F11fmfy4nny?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
@@ -37,6 +41,7 @@ const places: Place[] = [
     id: "omori-mall-ito",
     title: "Omori Mall",
     subtitle: "",
+    exitHint: "East Exit",
     img: "/images/ito.png",
     query: "イトーヨーカドー 大森店",
   },
@@ -44,14 +49,16 @@ const places: Place[] = [
     id: "kameido-station",
     title: "Kameido Station",
     subtitle: "Minoru's station",
+    exitHint: "East Exit",
     img: "/images/kameido.png",
     mapUrl:
       "https://www.google.com/maps/place/Kameido+Station/@35.6973268,139.8239909,17z/data=!3m1!4b1!4m6!3m5!1s0x601888c4f237ec91:0x33949174fb66cb0e!8m2!3d35.6973225!4d139.8265658!16s%2Fm%2F03nqjkw?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
   },
   {
     id: "asakusa-station",
-    title: "Asakusa Station",
+    title: "Asakusabashi Station",
     subtitle: "Traditional Town",
+    exitHint: "West Exit",
     img: "/images/asa.png",
     mapUrl:
       "https://www.google.co.jp/maps/place/浅草橋駅/@35.6974952,139.7834085,17z/data=!3m1!4b1!4m6!3m5!1s0x60188eb3ca1fe0af:0xe8619fd30fb31658!8m2!3d35.6974952!4d139.7859834!16s%2Fm%2F03gv1v3?hl=ja&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
@@ -60,6 +67,7 @@ const places: Place[] = [
     id: "shibuya-station",
     title: "Shibuya Station",
     subtitle: "Big crossing area",
+    exitHint: "Hachiko Exit",
     img: "/images/shibuya.png",
     mapUrl:
       "https://www.google.co.jp/maps/place/%E5%8C%BA%E6%B8%8B%E8%B0%B7%E4%BA%A4%E5%B7%AE%E7%82%B9/@35.659482,139.6979847,17z/data=!3m2!4b1!5s0x60188b57f546295f:0x486cece41a7b21b0!4m6!3m5!1s0x60188bcaeb0cd12b:0x20e563a2e0aec969!8m2!3d35.659482!4d139.7005596!16s%2Fg%2F11shy4scrj?hl=ja&entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
@@ -68,6 +76,7 @@ const places: Place[] = [
     id: "sunshine-city",
     title: "Sunshine City",
     subtitle: "Ikebukuro",
+    exitHint: "Ikebukuro Exit 35",
     img: "/images/sunshine.png",
     query: "Sunshine City Ikebukuro",
   },
@@ -75,6 +84,7 @@ const places: Place[] = [
     id: "tsukiji",
     title: "Tsukiji Outer Market",
     subtitle: "Street food + snacks",
+    exitHint: "Tsukijishijo Station A1",
     img: "/images/410.gif",
     query: "Tsukiji Outer Market",
   },
@@ -82,6 +92,7 @@ const places: Place[] = [
     id: "ueno",
     title: "Ueno Park",
     subtitle: "Temples + teahouse",
+    exitHint: "Ueno Station Park Exit",
     img: "/images/411.gif",
     query: "Ueno Park",
   },
@@ -89,6 +100,7 @@ const places: Place[] = [
     id: "skytree",
     title: "Skytree",
     subtitle: "Kirby Cafe + Shopping",
+    exitHint: "Oshiage Station Exit B3 or A2",
     img: "/images/418.gif",
     query: "Tokyo Skytree",
   },
@@ -96,9 +108,18 @@ const places: Place[] = [
     id: "akihabara",
     title: "Akihabara",
     subtitle: "Anime + retro shops",
+    exitHint: "Electric Town Exit",
     img: "/images/421.gif",
     mapUrl:
       "https://www.google.com/maps/place/Akihabara+Station/@35.6979481,139.7695397,17z/data=!3m1!4b1!4m6!3m5!1s0x60188ea7f90616ab:0x8d405f2c427203d5!8m2!3d35.6979438!4d139.7744106!16s%2Fg%2F11vklkb1rd?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D",
+  },
+  {
+    id: "yokohama",
+    title: "Yokohama",
+    subtitle: "Harbor city",
+    exitHint: "East Exit",
+    img: "/images/yokohama.jpg",
+    query: "Yokohama Station",
   },
 ];
 
@@ -106,7 +127,7 @@ function googleMapsUrl(place: Place): string {
   if (place.mapUrl) return place.mapUrl;
   const q = place.query ?? place.title;
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    q
+    q,
   )}`;
 }
 
@@ -148,6 +169,10 @@ export default function Maps() {
 
                 {place.subtitle && (
                   <div style={styles.subtitle}>{place.subtitle}</div>
+                )}
+
+                {place.exitHint && (
+                  <div style={styles.exitHint}>{place.exitHint}</div>
                 )}
 
                 <div style={styles.linkHint}>Open in Google Maps</div>
@@ -236,6 +261,12 @@ const styles: Record<string, React.CSSProperties> = {
     opacity: 0.8,
     overflow: "hidden",
     textOverflow: "ellipsis",
+  },
+  exitHint: {
+    marginTop: 6,
+    fontSize: 12,
+    fontWeight: 600,
+    color: "#b03060",
   },
   linkHint: { marginTop: 8, fontSize: 12, opacity: 0.7 },
   footerSpace: { height: 24 },
